@@ -47,7 +47,7 @@ namespace Escuela1.Controllers
         // GET: Materias/Create
         public IActionResult Create()
         {
-            ViewData["IdProfesor"] = new SelectList(_context.Maestros, "IdProfesor", "IdProfesor");
+            ViewData["IdProfesor"] = new SelectList(_context.Maestros, "IdProfesor", "Nombre");
             return View();
         }
 
@@ -64,7 +64,7 @@ namespace Escuela1.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdProfesor"] = new SelectList(_context.Maestros, "IdProfesor", "IdProfesor", materia.IdProfesor);
+            ViewData["IdProfesor"] = new SelectList(_context.Maestros, "IdProfesor", "Nombre", materia.IdProfesor);
             return View(materia);
         }
 
@@ -81,7 +81,7 @@ namespace Escuela1.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdProfesor"] = new SelectList(_context.Maestros, "IdProfesor", "IdProfesor", materia.IdProfesor);
+            ViewData["IdProfesor"] = new SelectList(_context.Maestros, "IdProfesor", "Nombre", materia.IdProfesor);
             return View(materia);
         }
 

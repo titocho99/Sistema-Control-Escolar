@@ -49,8 +49,8 @@ namespace Escuela1.Controllers
         public IActionResult Create()
         {
             
-            ViewData["IdAlumno"] = new SelectList(_context.Alumnos, "Nombre", "Nombre");
-            ViewData["IdMateria"] = new SelectList(_context.Materias, "IdMateria", "IdMateria");
+            ViewData["IdAlumno"] = new SelectList(_context.Alumnos, "IdAlumno", "Nombre");
+            ViewData["IdMateria"] = new SelectList(_context.Materias, "IdMateria", "Nombre");
             return View();
         }
 
@@ -67,8 +67,8 @@ namespace Escuela1.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdAlumno"] = new SelectList(_context.Alumnos, "Nombre", "Nombre");
-            ViewData["IdMateria"] = new SelectList(_context.Materias, "IdMateria", "IdMateria", alumnosDetalle.IdMateria);
+            ViewData["IdAlumno"] = new SelectList(_context.Alumnos, "IdAlumno", "Nombre");
+            ViewData["IdMateria"] = new SelectList(_context.Materias, "IdMateria", "Nombre", alumnosDetalle.IdMateria);
             return View(alumnosDetalle);
         }
 
