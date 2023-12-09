@@ -1,0 +1,45 @@
+﻿@model Escuela1.Models.AlumnosDetalle;
+
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalles</h1>
+
+<div>
+    <h4>calificación</h4>
+    <hr />
+    <dl class="row">
+        
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdAlumnoNavigation.Nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdAlumnoNavigation.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdAlumnoNavigation.Apellidos)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdAlumnoNavigation.Apellidos)
+        </dd>
+        <dt class = "col-sm-2">
+            Materia
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdMateriaNavigation.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Calificacion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Calificacion)
+        </dd>
+        
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
+    <a asp-action="Index">regresar</a>
+</div>

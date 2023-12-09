@@ -1,0 +1,36 @@
+﻿@model Escuela1.Models.Materia
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalles de Materia</h1>
+
+<div>
+    <h4>Datos</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdProfesorNavigation.Nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdProfesorNavigation.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdProfesorNavigation.Apellidos)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdProfesorNavigation.Apellidos)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IdMateria">Editar</a> |
+    <a asp-action="Index">Cancelar</a>
+</div>
